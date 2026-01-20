@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Moname's Art Portfolio</title>
+  <title>Mo's Art Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   
@@ -76,6 +76,7 @@
       max-width: 1200px;
       margin: 0 auto;
       padding: 40px 20px;
+      scroll-snap-align: start;
     }
 
     /* About Section */
@@ -169,30 +170,99 @@
       font-size: 1.2em;
     }
 
-    /* PDF Section */
-    .pdf-section {
-      background: white;
-      border-radius: 30px;
-      padding: 30px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-      margin-bottom: 40px;
-      animation: slideUp 0.8s ease-out;
+    /* Gallery Section */
+    .gallery-section {
+      width: 100%;
+      max-width: 100%;
+      padding: 0;
+      margin: 0;
     }
 
-    .section-title {
+    .gallery-item {
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      scroll-snap-align: start;
+      position: relative;
+    }
+
+    .gallery-item:nth-child(odd) {
+      background: linear-gradient(135deg, #ffeef8 0%, #ffe4ec 100%);
+    }
+
+    .gallery-item:nth-child(even) {
+      background: linear-gradient(135deg, #fff0f5 0%, #ffe8f0 100%);
+    }
+
+    .image-wrapper {
+      max-width: 1200px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .gallery-img {
+      max-width: 100%;
+      max-height: 80vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 20px;
+      box-shadow: 0 10px 50px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-img:hover {
+      transform: scale(1.02);
+    }
+
+    .image-caption {
       color: #f472b6;
-      font-size: 2em;
+      font-size: 1.5em;
       font-weight: 600;
       text-align: center;
-      margin-bottom: 25px;
+      text-shadow: 0 2px 10px rgba(255,255,255,0.8);
     }
 
-    .pdf-viewer {
-      width: 100%;
-      height: 80vh;
-      border: none;
-      border-radius: 20px;
-      box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
+    /* Scroll indicator */
+    .scroll-indicator {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #f472b6;
+      font-size: 2em;
+      animation: bounce 2s infinite;
+      z-index: 1000;
+      text-shadow: 0 2px 10px rgba(255,255,255,0.8);
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+      }
+      40% {
+        transform: translateX(-50%) translateY(-10px);
+      }
+      60% {
+        transform: translateX(-50%) translateY(-5px);
+      }
+    }
+
+    /* Smooth scroll */
+    html {
+      scroll-behavior: smooth;
+      scroll-snap-type: y mandatory;
+    }
+
+    body {
+      scroll-snap-type: y mandatory;
+      overflow-y: scroll;
     }
 
     /* Download Button */
@@ -210,8 +280,6 @@
       font-weight: 600;
       box-shadow: 0 8px 25px rgba(244, 114, 182, 0.4);
       transition: all 0.3s ease;
-      display: flex;
-      justify-content: center;
     }
 
     .download-btn:hover {
@@ -258,8 +326,12 @@
         justify-content: center;
       }
 
-      .pdf-viewer {
-        height: 60vh;
+      .gallery-img {
+        max-height: 70vh;
+      }
+
+      .image-caption {
+        font-size: 1.2em;
       }
     }
   </style>
@@ -280,8 +352,7 @@
     <div class="about-content">
       <h2>Hi! I'm Moname 👋</h2>
       <p>
-        Commission:Open | Moname มัมหมียัยแจล
-        ฉันรับวาดคอมมิชชั่นทุกประเภท 
+        Commission:Open | Moname มัมหมียัยแจล ฉันรับวาดคอมมิชชั่นทุกประเภท
         <br><br>
         📧 ติดต่อสอบถามหรือเช็คราคาได้ที่โซเชียลมีเดียด้านล่างเลยนะคะ ยินดีมากๆ! ✨
       </p>
@@ -293,22 +364,177 @@
         </a>
         <a href="https://www.facebook.com/monamehamlet" target="_blank" class="social-btn facebook">
           <span class="social-icon">f</span>
-          <span>monamehamlet Facebook Page</span>
+          <span>monamehamlet</span>
+        </a>
+        <a href="https://www.facebook.com/monamepleng" target="_blank" class="social-btn facebook">
+          <span class="social-icon">f</span>
+          <span>monamepleng</span>
+        </a>
+        <a href="mailto:moname.pleng@gmail.com" class="social-btn" style="background: linear-gradient(135deg, #ea4335 0%, #c5221f 100%); color: white;">
+          <span class="social-icon">✉</span>
+          <span>moname.pleng@gmail.com</span>
+        </a>
+        <a href="https://monamepleng.tumblr.com" target="_blank" class="social-btn" style="background: linear-gradient(135deg, #35465c 0%, #2c3e50 100%); color: white;">
+          <span class="social-icon">t</span>
+          <span>monamepleng.tumblr.com</span>
         </a>
       </div>
     </div>
   </div>
 
-  <!-- PDF Portfolio Section -->
-  <div class="pdf-section">
-    <h2 class="section-title">💼 Commission Info & Samples</h2>
-    <embed src="Commissions.pdf" class="pdf-viewer" type="application/pdf">
+  <!-- Gallery Section -->
+  <div class="gallery-section">
+    
+    <div class="gallery-item">
+      <div class="image-wrapper">
+        <img src="image1.jpg" alt="Artwork 1" class="gallery-img">
+        <p class="image-caption">🎨 Page 1</p>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <div class="image-wrapper">
+        <img src="image2.jpg" alt="Artwork 2" class="gallery-img">
+        <p class="image-caption">✨ Page 2</p>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <div class="image-wrapper">
+        <img src="image3.jpg" alt="Artwork 3" class="gallery-img">
+        <p class="image-caption">💖 Page 3</p>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <div class="image-wrapper">
+        <img src="image4.jpg" alt="Artwork 4" class="gallery-img">
+        <p class="image-caption">🌸 Page 4</p>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <div class="image-wrapper">
+        <img src="image5.jpg" alt="Artwork 5" class="gallery-img">
+        <p class="image-caption">🌟 Page 5</p>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <div class="image-wrapper">
+        <img src="image6.jpg" alt="Artwork 6" class="gallery-img">
+        <p class="image-caption">🎨 Page 6</p>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <div class="image-wrapper">
+        <img src="image7.jpg" alt="Artwork 7" class="gallery-img">
+        <p class="image-caption">✨ Page 7</p>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <div class="image-wrapper">
+        <img src="image8.jpg" alt="Artwork 8" class="gallery-img">
+        <p class="image-caption">💖 Page 8</p>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <div class="image-wrapper">
+        <img src="image9.jpg" alt="Artwork 9" class="gallery-img">
+        <p class="image-caption">🌸 Page 9</p>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <div class="image-wrapper">
+        <img src="image10.jpg" alt="Artwork 10" class="gallery-img">
+        <p class="image-caption">🌟 Page 10</p>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <div class="image-wrapper">
+        <img src="image11.jpg" alt="Artwork 11" class="gallery-img">
+        <p class="image-caption">🎨 Page 11</p>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <div class="image-wrapper">
+        <img src="image12.jpg" alt="Artwork 12" class="gallery-img">
+        <p class="image-caption">✨ Page 12</p>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <div class="image-wrapper">
+        <img src="image13.jpg" alt="Artwork 13" class="gallery-img">
+        <p class="image-caption">💖 Page 13</p>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <div class="image-wrapper">
+        <img src="image14.jpg" alt="Artwork 14" class="gallery-img">
+        <p class="image-caption">🌸 Page 14</p>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <div class="image-wrapper">
+        <img src="image15.jpg" alt="Artwork 15" class="gallery-img">
+        <p class="image-caption">🌟 Page 15</p>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <div class="image-wrapper">
+        <img src="image16.jpg" alt="Artwork 16" class="gallery-img">
+        <p class="image-caption">🎨 Page 16</p>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <div class="image-wrapper">
+        <img src="image17.jpg" alt="Artwork 17" class="gallery-img">
+        <p class="image-caption">✨ Page 17</p>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <div class="image-wrapper">
+        <img src="image18.jpg" alt="Artwork 18" class="gallery-img">
+        <p class="image-caption">💖 Page 18</p>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <div class="image-wrapper">
+        <img src="image19.jpg" alt="Artwork 19" class="gallery-img">
+        <p class="image-caption">🌸 Page 19</p>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <div class="image-wrapper">
+        <img src="image20.jpg" alt="Artwork 20" class="gallery-img">
+        <p class="image-caption">🌟 Page 20</p>
+      </div>
+    </div>
+
   </div>
 
-  <a href="Commissions.pdf" download class="download-btn">
-    <span>📥</span>
-    <span>Download Full Portfolio (PDF)</span>
-  </a>
+  <!-- Scroll Indicator -->
+  <div class="scroll-indicator">↓</div>
+
+  <div style="text-align: center; padding: 60px 20px; background: white; border-radius: 30px; margin: 40px auto; max-width: 800px;">
+    <a href="Commissions.pdf" download class="download-btn">
+      <span>📥</span>
+      <span>Download Full Portfolio (PDF)</span>
+    </a>
 
 </div>
 
