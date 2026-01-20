@@ -257,11 +257,11 @@
     /* Smooth scroll */
     html {
       scroll-behavior: smooth;
-      scroll-snap-type: y mandatory;
+      scroll-snap-type: y proximity;
     }
 
     body {
-      scroll-snap-type: y mandatory;
+      scroll-snap-type: y proximity;
       overflow-y: scroll;
     }
 
@@ -545,7 +545,7 @@
   <!-- Scroll Indicator -->
   <div class="scroll-indicator">↓</div>
 
-  <div style="text-align: center; padding: 60px 20px; background: white; border-radius: 30px; margin: 40px auto; max-width: 800px;">
+  <div style="text-align: center; padding: 60px 20px; background: white; border-radius: 30px; margin: 40px auto; max-width: 800px; scroll-snap-align: start;">
     <a href="Commissions.pdf" download class="download-btn">
       <span>📥</span>
       <span>Download Full Portfolio (PDF)</span>
@@ -553,7 +553,7 @@
 
 </div>
 
-<footer>
+<footer style="scroll-snap-align: end;">
   <p>✨ Made by @cattowriter | © 2026 All Rights Reserved ✨</p>
 </footer>
 
