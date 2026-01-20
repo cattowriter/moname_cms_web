@@ -170,6 +170,111 @@
       font-size: 1.2em;
     }
 
+    /* Commission Info Section */
+    .commission-card {
+      background: linear-gradient(135deg, #fff5f8 0%, #ffe9f0 100%);
+      border-radius: 30px;
+      padding: 40px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 40px rgba(244, 114, 182, 0.2);
+      border: 3px solid rgba(244, 114, 182, 0.3);
+    }
+
+    .commission-card h3 {
+      color: #f472b6;
+      font-size: 2em;
+      margin-bottom: 25px;
+      font-weight: 700;
+      text-align: center;
+      text-shadow: 0 2px 10px rgba(255,255,255,0.8);
+    }
+
+    .commission-section {
+      margin-bottom: 30px;
+    }
+
+    .commission-section h4 {
+      color: #ff6b9d;
+      font-size: 1.4em;
+      margin-bottom: 15px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .commission-section h4::before {
+      content: '✨';
+      font-size: 1.2em;
+    }
+
+    .commission-section ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .commission-section li {
+      color: #555;
+      line-height: 1.9;
+      font-size: 1.05em;
+      margin-bottom: 12px;
+      padding-left: 30px;
+      position: relative;
+    }
+
+    .commission-section li::before {
+      content: '💖';
+      position: absolute;
+      left: 0;
+      font-size: 1.1em;
+    }
+
+    .commission-section p {
+      color: #555;
+      line-height: 1.9;
+      font-size: 1.05em;
+      margin-bottom: 15px;
+    }
+
+    .highlight-text {
+      background: linear-gradient(135deg, #ffd4e5 0%, #ffc2d9 100%);
+      padding: 15px 20px;
+      border-radius: 15px;
+      font-weight: 600;
+      color: #d63384;
+      text-align: center;
+      margin: 20px 0;
+      box-shadow: 0 4px 15px rgba(244, 114, 182, 0.2);
+    }
+
+    .contact-links {
+      background: white;
+      padding: 20px;
+      border-radius: 20px;
+      margin-top: 25px;
+    }
+
+    .contact-links h4 {
+      color: #f472b6;
+      margin-bottom: 15px;
+      text-align: center;
+      font-size: 1.3em;
+    }
+
+    .contact-links a {
+      display: block;
+      color: #4267B2;
+      text-decoration: none;
+      margin: 8px 0;
+      transition: all 0.3s ease;
+      padding: 5px;
+    }
+
+    .contact-links a:hover {
+      color: #f472b6;
+      transform: translateX(5px);
+    }
+
     /* Gallery Section */
     .gallery-section {
       width: 100%;
@@ -360,6 +465,24 @@
         font-size: 0.85em;
         padding: 10px 20px;
       }
+
+      .commission-card {
+        padding: 25px 20px;
+        margin-bottom: 30px;
+      }
+
+      .commission-card h3 {
+        font-size: 1.6em;
+      }
+
+      .commission-section h4 {
+        font-size: 1.2em;
+      }
+
+      .commission-section li,
+      .commission-section p {
+        font-size: 0.95em;
+      }
     }
   </style>
 </head>
@@ -409,146 +532,187 @@
     </div>
   </div>
 
-  <!-- Gallery Section -->
-  <div class="gallery-section">
+  <!-- First Page Preview -->
+  <div style="background: white; border-radius: 30px; padding: 40px 20px; margin-bottom: 40px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); text-align: center;">
+    <img src="image1.jpg" alt="Commission Info" style="max-width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 50px rgba(0,0,0,0.15);">
+  </div>
+
+  <!-- Commission Info Section -->
+  <div class="commission-card">
+    <h3>🌸 การสั่งงาน 🌸</h3>
     
-    <div class="gallery-item">
-      <div class="image-wrapper">
-        <img src="image1.jpg" alt="Artwork 1" class="gallery-img">
-        <p class="image-caption">🎨 Page 1</p>
+    <div class="commission-section">
+      <ul>
+        <li><strong>กรณีใช้ในเชิงพาณิชย์</strong> เช่น ปกนิยาย, พวกกุญแจ, ที่คั่นหนังสือ, ลายสกรีนต่างๆ กรุณาระบุก่อน ราคาตามตกลงค่ะ x2 เท่าจากราคาต้นค่ะ</li>
+        <li><strong>ระบุรายละเอียดของขนาดภาพ</strong>ว่าขนาดเท่าไหร่ ขนาดของภาพมีผลต่อราคา เริ่มต้นที่ 1200x1200 px</li>
+        <li><strong>ระบุรูปร่าง ท่าทาง ฉาก</strong> ฯลฯ ของตัวละครให้ละเอียด จะได้เข้าใจตรงกันและไม่ต้องแก้เยอะนะคะ</li>
+        <li><strong>มัดจำก่อนครึ่งนึงหลังสั่งงานทุกครัง</strong></li>
+        <li><strong>งานเร่งมี+ค่าเร่งด้วยค่ะ</strong></li>
+      </ul>
+      
+      <div class="highlight-text">
+        # หากโอนเงินแล้วขอสลิปยืนยันด้วยค่ะ
       </div>
     </div>
 
-    <div class="gallery-item">
+    <div class="commission-section">
+      <h4>การทำงาน</h4>
+      <p>ขอรายละเอียดข้อมูลตัวละคร รูปร่าง ท่าทาง เครื่องแต่งกาย</p>
+      <ul>
+        <li>สามารถแก้สเกตได้ไม่เกิน 3 ครั้ง หลังจากตัดเส้นแล้ว จะไม่สามารถแก้ไขได้ ยกเว้นเป็นความผิดทางนักวาดเอง</li>
+        <li>หลังจากตัดเส้นเสร็จจะทำการลงสีแล้ว สามารถปรับแก้ได้ตามความเหมาะสม</li>
+        <li>รอรับงานได้เลยค่ะ</li>
+      </ul>
+    </div>
+
+    <div class="commission-section">
+      <h4>การชำระเงิน</h4>
+      <p>จ่ายมัดจำก่อนครึ่งนึงเมื่อสั่งงานเสร็จ จ่ายอีกครึ่งตอนงานเสร็จค่ะ</p>
+      <p>พอจ่ายแล้วเราถึงจะส่งไฟล์งานที่สมบูรณ์ขนาดจริงไปให้นะคะ</p>
+      <p><strong>โอนเงินผ่านบัญชีธนาคารค่ะ</strong></p>
+    </div>
+
+    <div class="contact-links">
+      <h4>📧 ช่องทางติดต่อ</h4>
+      <a href="https://www.facebook.com/monamehamlet" target="_blank">🔹 facebook.com/monamehamlet</a>
+      <a href="https://www.facebook.com/monamepleng" target="_blank">🔹 facebook.com/monamepleng</a>
+      <a href="https://x.com/monamehamlet" target="_blank">🔹 x.com/monamehamlet</a>
+    </div>
+  </div>
+
+  <!-- Gallery Section -->
+  <div class="gallery-section">
+    
+    <!-- <div class="gallery-item">
       <div class="image-wrapper">
         <img src="image2.jpg" alt="Artwork 2" class="gallery-img">
         <p class="image-caption">✨ Page 2</p>
       </div>
-    </div>
+    </div> -->
 
     <div class="gallery-item">
       <div class="image-wrapper">
         <img src="image3.jpg" alt="Artwork 3" class="gallery-img">
-        <p class="image-caption">💖 Page 3</p>
+        <p class="image-caption">💖 Page 2</p>
       </div>
     </div>
 
     <div class="gallery-item">
       <div class="image-wrapper">
         <img src="image4.jpg" alt="Artwork 4" class="gallery-img">
-        <p class="image-caption">🌸 Page 4</p>
+        <p class="image-caption">🌸 Page 3</p>
       </div>
     </div>
 
     <div class="gallery-item">
       <div class="image-wrapper">
         <img src="image5.jpg" alt="Artwork 5" class="gallery-img">
-        <p class="image-caption">🌟 Page 5</p>
+        <p class="image-caption">🌟 Page 4</p>
       </div>
     </div>
 
     <div class="gallery-item">
       <div class="image-wrapper">
         <img src="image6.jpg" alt="Artwork 6" class="gallery-img">
-        <p class="image-caption">🎨 Page 6</p>
+        <p class="image-caption">🎨 Page 5</p>
       </div>
     </div>
 
     <div class="gallery-item">
       <div class="image-wrapper">
         <img src="image7.jpg" alt="Artwork 7" class="gallery-img">
-        <p class="image-caption">✨ Page 7</p>
+        <p class="image-caption">✨ Page 6</p>
       </div>
     </div>
 
     <div class="gallery-item">
       <div class="image-wrapper">
         <img src="image8.jpg" alt="Artwork 8" class="gallery-img">
-        <p class="image-caption">💖 Page 8</p>
+        <p class="image-caption">💖 Page 7</p>
       </div>
     </div>
 
     <div class="gallery-item">
       <div class="image-wrapper">
         <img src="image9.jpg" alt="Artwork 9" class="gallery-img">
-        <p class="image-caption">🌸 Page 9</p>
+        <p class="image-caption">🌸 Page 8</p>
       </div>
     </div>
 
     <div class="gallery-item">
       <div class="image-wrapper">
         <img src="image10.jpg" alt="Artwork 10" class="gallery-img">
-        <p class="image-caption">🌟 Page 10</p>
+        <p class="image-caption">🌟 Page 9</p>
       </div>
     </div>
 
     <div class="gallery-item">
       <div class="image-wrapper">
         <img src="image11.jpg" alt="Artwork 11" class="gallery-img">
-        <p class="image-caption">🎨 Page 11</p>
+        <p class="image-caption">🎨 Page 10</p>
       </div>
     </div>
 
     <div class="gallery-item">
       <div class="image-wrapper">
         <img src="image12.jpg" alt="Artwork 12" class="gallery-img">
-        <p class="image-caption">✨ Page 12</p>
+        <p class="image-caption">✨ Page 11</p>
       </div>
     </div>
 
     <div class="gallery-item">
       <div class="image-wrapper">
         <img src="image13.jpg" alt="Artwork 13" class="gallery-img">
-        <p class="image-caption">💖 Page 13</p>
+        <p class="image-caption">💖 Page 12</p>
       </div>
     </div>
 
     <div class="gallery-item">
       <div class="image-wrapper">
         <img src="image14.jpg" alt="Artwork 14" class="gallery-img">
-        <p class="image-caption">🌸 Page 14</p>
+        <p class="image-caption">🌸 Page 13</p>
       </div>
     </div>
 
     <div class="gallery-item">
       <div class="image-wrapper">
         <img src="image15.jpg" alt="Artwork 15" class="gallery-img">
-        <p class="image-caption">🌟 Page 15</p>
+        <p class="image-caption">🌟 Page 14</p>
       </div>
     </div>
 
     <div class="gallery-item">
       <div class="image-wrapper">
         <img src="image16.jpg" alt="Artwork 16" class="gallery-img">
-        <p class="image-caption">🎨 Page 16</p>
+        <p class="image-caption">🎨 Page 15</p>
       </div>
     </div>
 
     <div class="gallery-item">
       <div class="image-wrapper">
         <img src="image17.jpg" alt="Artwork 17" class="gallery-img">
-        <p class="image-caption">✨ Page 17</p>
+        <p class="image-caption">✨ Page 16</p>
       </div>
     </div>
 
     <div class="gallery-item">
       <div class="image-wrapper">
         <img src="image18.jpg" alt="Artwork 18" class="gallery-img">
-        <p class="image-caption">💖 Page 18</p>
+        <p class="image-caption">💖 Page 17</p>
       </div>
     </div>
 
     <div class="gallery-item">
       <div class="image-wrapper">
         <img src="image19.jpg" alt="Artwork 19" class="gallery-img">
-        <p class="image-caption">🌸 Page 19</p>
+        <p class="image-caption">🌸 Page 18</p>
       </div>
     </div>
 
     <div class="gallery-item">
       <div class="image-wrapper">
         <img src="image20.jpg" alt="Artwork 20" class="gallery-img">
-        <p class="image-caption">🌟 Page 20</p>
+        <p class="image-caption">🌟 Page 19</p>
       </div>
     </div>
 
